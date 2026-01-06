@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "@types/p5": "^1.7.7",
+    "astro": "^5.16.6",
+    "p5": "^2.1.2",
+    "save-dev": "^0.0.1-security"
   }
 }
