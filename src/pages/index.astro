@@ -1,16 +1,86 @@
 ---
-
+import BaseLayout from "../layout/baseLayout.astro"
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
-``
+<BaseLayout>
+	<div class="profile">
+		<div class="profileIcon">
+
+		</div>
+		<div class="profileText">
+			<h1>
+				Hello!
+			</h1>
+			<p>
+				I'm Brian
+			</p>
+			
+		</div>
+	</div>
+
+</BaseLayout>
+<style>
+	@keyframes profile {
+		0% {
+			top: calc(50vh - 64px)
+		}
+
+		66% {
+			top: calc(50vh - 64px)
+		}
+		100% {
+			top: 0px
+		}
+	}
+
+	@keyframes profileText {
+		0% {
+			border-right: 0px solid white;
+			width: 0px;
+		}
+
+		20% {
+			border-right: 0px solid white;
+		}
+
+		40% {
+			border-right: 2px solid white;
+			width: 0px;
+		}
+
+		90% {
+			border-right: 2px solid white;
+			width: calc(fit-content);
+		}
+
+		100% {
+			border-right: 0px solid white;
+			width: 84px;
+		}
+	}
+
+	.profile {
+		display: flex;
+		justify-self: center;
+		position: relative;
+		margin-top: 48px;
+		animation: profile 3s ease-in-out;
+	}
+
+	.profileIcon {
+		height: 128px;
+		width: 128px;
+		background-color: white;
+		border-radius: 50%;
+	}
+
+	.profileText {
+		color: white;
+		margin-left: 12px;
+		overflow: hidden;
+		animation: profileText 1s ease-out;
+	}
+
+	.profileText h1, .profileText p {
+		text-wrap-mode: nowrap;
+	}
+</style>
